@@ -1,0 +1,33 @@
+.popup__main-container {
+  background-color: white;
+  max-width: 430px;
+  /*height: 330px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+  
+@media screen and (max-width: 500px) {
+  .popup__main-container {
+    width: 100%;
+  }
+}
+
+.popup__main-container {
+  background-color: white;
+  max-width: 430px;
+  /*height: 330px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+  
+@media screen and (max-width: 500px) {
+  .popup__main-container {
+    width: 100%;
+  }
+}

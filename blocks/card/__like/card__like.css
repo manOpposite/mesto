@@ -1,0 +1,19 @@
+.card__like {
+  max-width: 20.76px;
+  width: 100%;
+  height: 18.13px;
+  background-image: url('../../../images/like.svg');
+  background-repeat: no-repeat;
+  margin-top: 31px;
+  margin-right: 18.24px;
+  border: none;
+  background-color: inherit;
+}
+
+.card__like:hover {
+  opacity: 0.6;
+}
+
+/*.card__like:active {
+  background-image: url('../../../images/like-black.svg') 
+}*/

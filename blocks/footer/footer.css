@@ -1,0 +1,20 @@
+.footer {
+  color: #545454;
+  max-width: 882px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 890px) {
+  .footer {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    width: 282px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
