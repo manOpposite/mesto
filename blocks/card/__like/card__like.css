@@ -8,6 +8,7 @@
   margin-right: 18.24px;
   border: none;
   background-color: inherit;
+  cursor: pointer;
 }
 
 .card__like:hover {

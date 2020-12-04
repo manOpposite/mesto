@@ -12,6 +12,7 @@
   padding: 0px;
   margin-left: auto;
   background-color: #000000;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {
