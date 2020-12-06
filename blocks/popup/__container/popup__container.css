@@ -2,13 +2,13 @@
   max-width: 430px;
   width: 100%;
   position: relative;
-  left: calc(50% - 215px);
-  top: calc(50% - 188px);
+  left: 50%;
+  top: 50%;
+  transform: translate( -50%, -50% );
 }
     
 @media screen and (max-width: 500px) {
   .popup__container {
     max-width: 282px;
-    left: calc(50% - 141px);
   }
 }
