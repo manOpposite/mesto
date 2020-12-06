@@ -8,8 +8,7 @@ let jobInput = formElement.querySelector('.popup__item_job');
 let nameInput = formElement.querySelector('.popup__item_name');
 let profileName = main.querySelector('.profile__name');
 let profileJob = main.querySelector('.profile__text');
-let saveButton = popup.querySelector('.popup__save');
-let saveFormElement = popup.querySelector('.popup__main-container');
+let saveButton = popup.querySelector('.popup__main-container');
 
 function popupOpened() {
   popup.classList.add('popup_opened');
@@ -40,4 +39,4 @@ function formSubmitHandler (evt) {
 
 editButton.addEventListener('click', popupOpened);
 closeButton.addEventListener('click', popupClosed);
-saveFormElement.addEventListener('submit', formSubmitHandler);
+saveButton.addEventListener('submit', formSubmitHandler);
