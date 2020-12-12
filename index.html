@@ -25,6 +25,7 @@
         <section class="elements">
           <div class="cards">
             <div class="card">
+             <button class="card__wastebasket" type="button"></button>
               <img class="card__image" src="images/karachaevsk.jpeg" alt="Карачаевск">
               <div class="card__info">
                 <h2 class="card__name">Карачаевск</h2>
@@ -32,6 +33,7 @@
               </div>
             </div>
             <div class="card">
+              <button class="card__wastebasket" type="button"></button>
               <img class="card__image" src="images/elbrus.jpeg" alt="Гора Эльбрус">
               <div class="card__info">
                 <h2 class="card__name">Гора Эльбрус</h2>
@@ -39,6 +41,7 @@
               </div>
             </div>
             <div class="card">
+              <button class="card__wastebasket" type="button"></button>
               <img class="card__image" src="images/dombai.jpeg" alt="Домбай">
               <div class="card__info">
                 <h2 class="card__name">Домбай</h2>
@@ -46,6 +49,7 @@
               </div>
             </div>
             <div class="card">
+              <button class="card__wastebasket" type="button"></button>
               <img class="card__image" src="images/ocean.jpeg" alt="Закат на берегу океана">
               <div class="card__info">
                 <h2 class="card__name">Океан</h2>
@@ -53,6 +57,7 @@
               </div>
             </div>
             <div class="card">
+              <button class="card__wastebasket" type="button"></button>
               <img class="card__image" src="images/landscape.jpeg" alt="Мост в лесу">
               <div class="card__info">
                 <h2 class="card__name">Лес</h2>
@@ -60,6 +65,7 @@
               </div>
             </div>
             <div class="card">
+              <button class="card__wastebasket" type="button"></button>
               <img class="card__image" src="images/forest.jpeg" alt="Водопад в лесу">
               <div class="card__info">
                 <h2 class="card__name">Водопад</h2>
@@ -73,18 +79,36 @@
         <p class="footer__copy">&copy; 2020 Mesto Russia</p>
       </footer>
     
-      <section class="popup">
-        <div class="popup__container">
-          <button class="popup__close-icon" type="button"></button>
-          <form class="popup__main-container" name="user-about">
-            <h2 class="popup__heading">Редактировать профиль</h2>
-            <fieldset class="popup__input-container">
-              <input required type="text" class="popup__item popup__item_name" name="user-name" value="" placeholder="Имя">
-              <input required type="text" class="popup__item popup__item_job" name="user-job" value="" placeholder="Профессия">
-            </fieldset>
-            <button class="popup__save" type="submit">Сохранить</button>
-          </form>
+      <section class="popups">
+
+        <div class="popup popup__profile">
+          <div class="popup__container">
+            <button class="popup__close-icon" type="button"></button>
+            <form class="popup__main-container" name="user-about">
+              <h2 class="popup__heading">Редактировать профиль</h2>
+              <fieldset class="popup__input-container">
+                <input required type="text" class="popup__item popup__item_name" name="user-name" value="" placeholder="Имя">
+                <input required type="text" class="popup__item popup__item_job" name="user-job" value="" placeholder="Профессия">
+              </fieldset>
+              <button class="popup__save" type="submit">Сохранить</button>
+            </form>
+          </div>
         </div>
+
+        <div class="popup popup__image">
+          <div class="popup__container">
+            <button class="popup__close-icon" type="button"></button>
+            <form class="popup__main-container" name="create-image">
+              <h2 class="popup__heading">Новое место</h2>
+              <fieldset class="popup__input-container">
+                <input required type="text" class="popup__item popup__item_image" name="name-image" value="" placeholder="Название">
+                <input required type="text" class="popup__item popup__item_link" name="link-image" value="" placeholder="Ссылка на картинку">
+              </fieldset>
+              <button class="popup__save" type="submit">Создать</button>
+            </form>
+          </div>
+        </div>
+
       </section>
     </div>
     <script  src="scripts/script.js"></script>
