@@ -24,7 +24,7 @@
 
         <section class="elements">
           <div class="cards">
-            <div class="card">
+            <!--<div class="card">
              <button class="card__wastebasket" type="button"></button>
               <img class="card__image" src="images/karachaevsk.jpeg" alt="Карачаевск">
               <div class="card__info">
@@ -71,7 +71,7 @@
                 <h2 class="card__name">Водопад</h2>
                 <button class="card__like" type="button"></button>
               </div>
-            </div>
+            </div>-->
           </div>
         </section>
       </main>
@@ -104,12 +104,24 @@
                 <input required type="text" class="popup__item popup__item_image" name="name-image" value="" placeholder="Название">
                 <input required type="text" class="popup__item popup__item_link" name="link-image" value="" placeholder="Ссылка на картинку">
               </fieldset>
-              <button class="popup__save" type="submit">Создать</button>
+              <button class="popup__save popup__create-button" type="submit">Создать</button>
             </form>
           </div>
         </div>
 
       </section>
+
+      <template class="image-template">
+        <div class="card">
+          <button class="card__wastebasket" type="button"></button>
+          <img class="card__image"src="">
+          <div class="card__info">
+            <h2 class="card__name"></h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </img>
+      </template>
+
     </div>
     <script  src="scripts/script.js"></script>
   </body>
