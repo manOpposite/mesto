@@ -1,7 +1,7 @@
 
 let main = document.querySelector('.main');
 let editButton = main.querySelector('.profile__edit-button');
-let popupProfile = document.querySelector('.popup__profile');
+let popupProfile = document.querySelector('.popup_profile');
 let formElement = popupProfile.querySelector('.popup__input-container');
 let jobInput = formElement.querySelector('.popup__item_job');
 let nameInput = formElement.querySelector('.popup__item_name');
@@ -9,10 +9,10 @@ let profileName = main.querySelector('.profile__name');
 let profileJob = main.querySelector('.profile__text');
 let saveButton = popupProfile.querySelector('.popup__main-container');
 let popups = document.querySelector('.popups');
-let pictureFullsize = popups.querySelector('.popup__picture');//
+let pictureFullsize = popups.querySelector('.popup_picture');//
 let closePicButton = pictureFullsize.querySelector('.popup__close-icon');//
 let closeButtonProfile = popupProfile.querySelector('.popup__close-icon');
-let popupImage = document.querySelector('.popup__image');
+let popupImage = document.querySelector('.popup_image');
 let addButton = document.querySelector('.profile__add-button');
 let closeButtonImage = popupImage.querySelector('.popup__close-icon');//
 let createButton = popupImage.querySelector('.popup__main-container');
