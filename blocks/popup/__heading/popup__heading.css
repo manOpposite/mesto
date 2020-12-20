@@ -18,9 +18,3 @@
     margin: 25px auto 0px;
   }
 }
-
-@media screen and (max-width: 350px) {
-  .popup__heading {
-    width: 240px;
-  }
-}
