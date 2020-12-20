@@ -25,6 +25,12 @@
     height: 46px;
     font-size:14px;
     line-height: 17px;
-    margin: 45px auto 25px;
+    margin: 36px auto 25px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .popup__save {
+    width: 200px;
   }
 }
