@@ -6,7 +6,6 @@
   height: 19.3px;
   position: absolute;
   border: none;
-  border: none;
   background-color: inherit;
   cursor: pointer;
   top: 18px;
@@ -14,5 +13,5 @@
 }
 
 .card__remove-button:hover {
-    opacity: 0.6;
-  }
+  opacity: 0.6;
+}
