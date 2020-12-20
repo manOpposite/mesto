@@ -1,4 +1,4 @@
-.card__wastebasket {
+.card__remove-button {
   background-image: url('../../../images/basket.svg');
   background-repeat: no-repeat;
   max-width: 18px;
@@ -13,6 +13,6 @@
   right: 15px;
 }
 
-.card__wastebasket:hover {
+.card__remove-button:hover {
     opacity: 0.6;
   }
