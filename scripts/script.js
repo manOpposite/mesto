@@ -28,14 +28,6 @@ function popupOpened(modal) {
 }
 
 
-function popupPicClosed(evt) {
-  closeButton = evt.target;
-  if(closeButton.classList.contains('popup__close-icon')){
-    closeButton.closest('.popup__picture').classList.remove('popup_opened');
-  }
-}
-
-
 function popupClosed(modal) {
   modal.classList.remove('popup_opened');
 }
@@ -53,7 +45,7 @@ function formSubmitHandler (evt) {
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   
-  popupClosed();
+  popupClosed(popupProfile);
 }
 
 
@@ -134,7 +126,7 @@ function formSubmitHandlerImage(evt) {
   evt.preventDefault();
   addCard();
   getDefaultDataImage();
-  popupClosed();
+  popupClosed(popupImage);
 }
 
 
@@ -153,15 +145,6 @@ function popupPictureOpened(item) {
   pictureLink.alt = item.alt;
   pictureName.textContent = item.name;
   popupOpened(pictureFullSize);
-}
- 
-
-// Закрытие попапа-картинки
-
-function closePicturePopup(evt) {
-  if(evt.target.closest('.popup')) {
-    popupClosed(pictureFullSize); 
-  }
 }
 
 
@@ -188,7 +171,7 @@ handleEditButton.addEventListener('click', () => {
 handleSaveButton.addEventListener('submit', formSubmitHandler);
  
 
-handleClosePicButton.addEventListener('click', closePicturePopup);
+handleClosePicButton.addEventListener('click', () => popupClosed(pictureFullSize));//closePicturePopup);
 
 
 handleCreateButton.addEventListener('submit', formSubmitHandlerImage);
