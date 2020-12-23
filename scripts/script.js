@@ -1,3 +1,4 @@
+
 const main = document.querySelector('.main');
 const handleEditButton = main.querySelector('.profile__edit-button');
 const popupProfile = document.querySelector('.popup_profile');
@@ -98,7 +99,7 @@ function getDefaultImage(item) {
 }
 
 
-function renderImage(arr){
+function renderImage(arr) {
   const imageItems = arr.map(getDefaultImage);
   cards.append(...imageItems);
 };
@@ -108,7 +109,6 @@ renderImage(initialCards);
 
 
 // Добавление карточки
-
 
 function addCard() {
   const newCard = getDefaultImage({name: cardName.value, link: cardLink.value});
@@ -131,7 +131,6 @@ function formSubmitHandlerImage(evt) {
 
 
 // Лайк карточки
-
 
 function getLike(evt) {
   evt.target.classList.toggle('card__like_active')
@@ -157,8 +156,7 @@ function removeCard(evt) {
 }
 
 
-
-handleCloseButtonProfile.addEventListener('click', () =>  popupClosed(popupProfile));
+handleCloseButtonProfile.addEventListener('click', () => popupClosed(popupProfile));
 
 
 
@@ -171,7 +169,7 @@ handleEditButton.addEventListener('click', () => {
 handleSaveButton.addEventListener('submit', formSubmitHandler);
  
 
-handleClosePicButton.addEventListener('click', () => popupClosed(pictureFullSize));//closePicturePopup);
+handleClosePicButton.addEventListener('click', () => popupClosed(pictureFullSize));
 
 
 handleCreateButton.addEventListener('submit', formSubmitHandlerImage);
