@@ -76,7 +76,7 @@ function getDefaultImage(item) {
   const handleDeleteCard = imageElement.querySelector(".card__remove-button");
   const pictureNameTemplate = imageElement.querySelector(".card__name");
   handlePreviewPicture.src = item.link;
-  handlePreviewPicture.alt = item.alt;
+  handlePreviewPicture.alt = `Изображение ${item.name}`;
   pictureNameTemplate.textContent = item.name;
   handleLikeCard.addEventListener("click", getLike);
   handlePreviewPicture.addEventListener("click", () => popupPictureOpened(item));
@@ -115,7 +115,6 @@ function getLike(evt) {
 
 function popupPictureOpened(item) {
   pictureLink.src = item.link;
-  pictureLink.alt = item.alt;
   pictureName.textContent = item.name;
   popupOpened(pictureFullSize);
 }
