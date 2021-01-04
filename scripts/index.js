@@ -41,6 +41,28 @@ function formSubmitHandler(evt) {
   popupClosed(popupProfile);
 }
 
+function hideErrorDefault(form) {
+  const inputList = form.querySelectorAll(".popup__input");
+
+  inputList.forEach(input => {
+    const error = form.querySelector(`#${input.id}-error`);
+    error.textContent = "";
+    input.classList.remove("popup__input_type_error");
+  });
+}
+
+function setButtonActive(form) {
+  const button = form.querySelector(".popup__button");
+  button.classList.remove("popup__button_disabled");
+  button.disabled = false;
+}
+
+function setButtonDisabled(form) {
+  const button = form.querySelector(".popup__button");
+  button.classList.add("popup__button_disabled");
+  button.disabled = true;
+}
+
 function closePopupEsc(evt) {
   if(evt.key === "Escape") {
     popupClosed(document.querySelector(".popup_opened"));
@@ -110,13 +132,13 @@ function removeCard(evt) {
 
 handleCloseProfile.addEventListener("click", () => {
   popupClosed(popupProfile);
-  hideErrorDefault(popupProfile);
 });
 
 handleEditButton.addEventListener("click", () => {
   jobInput.value = profileJob.textContent;
   nameInput.value = profileName.textContent;
   setButtonActive(popupProfile);
+  hideErrorDefault(popupProfile);
   popupOpened(popupProfile);
 });
 
