@@ -2,11 +2,11 @@ const main = document.querySelector(".main");
 const handleEditButton = main.querySelector(".profile__edit-button");
 const popupProfile = document.querySelector(".popup_profile");
 const formElement = popupProfile.querySelector(".popup__input-container");
-const jobInput = formElement.querySelector(".popup__item_job");
-const nameInput = formElement.querySelector(".popup__item_name");
+const jobInput = formElement.querySelector(".popup__input_job");
+const nameInput = formElement.querySelector(".popup__input_name");
 const profileName = main.querySelector(".profile__name");
 const profileJob = main.querySelector(".profile__text");
-const handleSaveProfile = popupProfile.querySelector(".popup__main-container");
+const handleSaveProfile = popupProfile.querySelector(".popup__form");
 const popups = document.querySelector(".popups");
 const pictureFullSize = popups.querySelector(".popup_picture");
 const handleClosePicture = pictureFullSize.querySelector(".popup__close-icon");
@@ -14,13 +14,13 @@ const handleCloseProfile = popupProfile.querySelector(".popup__close-icon");
 const popupImage = document.querySelector(".popup_image");
 const handleAddImage = document.querySelector(".profile__add-button");
 const handleCloseImage = popupImage.querySelector(".popup__close-icon");
-const handleCreateCard = popupImage.querySelector(".popup__main-container");
+const handleCreateCard = popupImage.querySelector(".popup__form");
 const cards = document.querySelector(".cards");
 const imageTemplate = document.querySelector(".image-template");
 const pictureName = pictureFullSize.querySelector(".popup__picture-name");
 const pictureLink = pictureFullSize.querySelector(".popup__picture-item");
-const cardName = popupImage.querySelector(".popup__item_image");
-const cardLink = popupImage.querySelector(".popup__item_link");
+const cardName = popupImage.querySelector(".popup__input_image");
+const cardLink = popupImage.querySelector(".popup__input_link");
 
 function popupOpened(modal) {
   modal.classList.add("popup_opened");
@@ -91,13 +91,15 @@ function removeCard(evt) {
   evt.target.closest(".card").remove();
 }
 
-handleCloseProfile.addEventListener("click", () =>
-  popupClosed(popupProfile)
-);
+handleCloseProfile.addEventListener("click", () => {
+  popupClosed(popupProfile);
+  hideErrorDefault(popupProfile);
+});
 
 handleEditButton.addEventListener("click", () => {
   jobInput.value = profileJob.textContent;
   nameInput.value = profileName.textContent;
+  setButtonActive(popupProfile);
   popupOpened(popupProfile);
 });
 

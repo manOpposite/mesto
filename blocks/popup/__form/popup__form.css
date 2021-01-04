@@ -1,4 +1,4 @@
-.popup__main-container {
+.popup__form {
   background-color: white;
   max-width: 430px;
   display: flex;
@@ -9,13 +9,13 @@
 }
   
 @media screen and (max-width: 500px) {
-  .popup__main-container {
+  .popup__form {
     width: 100%;
   }
 }
   
 @media screen and (max-width: 500px) {
-  .popup__main-container {
+  .popup__form {
     width: 100%;
   }
 }
