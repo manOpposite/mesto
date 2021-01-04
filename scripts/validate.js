@@ -59,6 +59,12 @@ function setButtonActive(form) {
   button.disabled = false;
 }
 
+function setButtonDisabled(form) {
+  const button = form.querySelector('.popup__button');
+  button.classList.add('popup__button_disabled');
+  button.disabled = true;
+}
+
 function enableValidation() {
   const forms = document.querySelectorAll('.popup__form');
   forms.forEach(form => {

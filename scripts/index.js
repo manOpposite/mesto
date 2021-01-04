@@ -24,10 +24,14 @@ const cardLink = popupImage.querySelector(".popup__input_link");
 
 function popupOpened(modal) {
   modal.classList.add("popup_opened");
+  document.addEventListener("keydown", closePopupEsc);
+  document.addEventListener("click", closePopupOverlay); 
 }
 
 function popupClosed(modal) {
   modal.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopupEsc);
+  document.removeEventListener("click", closePopupOverlay); 
 }
 
 function formSubmitHandler(evt) {
@@ -35,6 +39,18 @@ function formSubmitHandler(evt) {
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   popupClosed(popupProfile);
+}
+
+function closePopupEsc(evt) {
+  if(evt.key === "Escape") {
+    popupClosed(document.querySelector(".popup_opened"));
+  }
+}
+
+function closePopupOverlay(evt) {
+  if(evt.target.classList.contains("popup")) {
+    evt.target.closest(".popup").classList.remove("popup_opened");
+  }
 }
 
 function getDefaultImage(item) {
@@ -74,6 +90,7 @@ function formSubmitHandlerImage(evt) {
   evt.preventDefault();
   addCard();
   setDefaultDataImage();
+  setButtonDisabled(popupImage);
   popupClosed(popupImage);
 }
 

@@ -35,10 +35,14 @@
             <form class="popup__form" name="user-about" novalidate>
               <h2 class="popup__heading">Редактировать профиль</h2>
               <fieldset class="popup__input-container">
-                <input id="user-name" required type="text" class="popup__input popup__input_name" autocomplete="off" name="user-name" value="" placeholder="Имя" minlength=2 maxlength=40>
-                <span id="user-name-error"></span>
-                <input id="user-job" required type="text" class="popup__input popup__input_job" autocomplete="off" name="user-job" value="" placeholder="Профессия" minlength=2 maxlength=200>
-                <span id="user-job-error"></span>
+                <label class="popup__label">
+                  <input id="user-name" required type="text" class="popup__input popup__input_name" autocomplete="off" name="user-name" value="" placeholder="Имя" minlength=2 maxlength=40>
+                  <span id="user-name-error"></span>
+                </label>
+                <label class="popup__label">
+                  <input id="user-job" required type="text" class="popup__input popup__input_job" autocomplete="off" name="user-job" value="" placeholder="Профессия" minlength=2 maxlength=200>
+                  <span id="user-job-error"></span>
+                </label>
               </fieldset>
               <button class="popup__button" type="submit">Сохранить</button>
             </form>
@@ -50,10 +54,14 @@
             <form class="popup__form popup__form_add" name="create-image" novalidate>
               <h2 class="popup__heading">Новое место</h2>
               <fieldset class="popup__input-container">
-                <input id="name-image" required type="text" class="popup__input popup__input_image" autocomplete="off" name="name-image" value="" placeholder="Название" minlength="2" maxlength="30">
-                <span id="name-image-error"></span>
-                <input id="link-image" required type="url" class="popup__input popup__input_link" autocomplete="off" name="link-image" value="" placeholder="Ссылка на картинку">
-                <span id="link-image-error"></span>
+                <label class="popup__label">
+                  <input id="name-image" required type="text" class="popup__input popup__input_image" autocomplete="off" name="name-image" value="" placeholder="Название" minlength="2" maxlength="30">
+                  <span id="name-image-error"></span>
+                </label>
+                <label class="popup__label">
+                  <input id="link-image" required type="url" class="popup__input popup__input_link" autocomplete="off" name="link-image" value="" placeholder="Ссылка на картинку">
+                  <span id="link-image-error"></span>
+                </label>
               </fieldset>
               <button class="popup__button popup__create-button" type="submit">Создать</button>
             </form>
