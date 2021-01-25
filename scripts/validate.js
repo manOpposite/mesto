@@ -4,6 +4,27 @@ export class Validate {
     this._formSelector = formSelector;
   }
 
+  hideErrorDefault() {
+    const inputList = this._form.querySelectorAll(this._config.inputSelector);
+    inputList.forEach(input => {
+      const error = this._form.querySelector(`#${input.id}-error`);
+      error.textContent = "";
+      input.classList.remove(this._config.inputErrorClass);
+    });
+  }
+  
+  setButtonActive() {
+    const button = this._form.querySelector(this._config.submitButtonSelector);
+    button.classList.remove(this._config.inactiveButtonClass);
+    button.disabled = false;
+  }
+  
+  setButtonDisabled() {
+    const button = this._form.querySelector(this._config.submitButtonSelector);
+    button.classList.add(this._config.inactiveButtonClass);
+    button.disabled = true;
+  }
+
   _showError(form, input) {
     const error = form.querySelector(`#${input.id}-error`);
     error.textContent = input.validationMessage;

@@ -1,10 +1,10 @@
-import {openPopup, pictureLink, pictureName, popupImage} from "./index.js";
 
 export class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, openPicturePopup) {
     this._data = data;
     this._cardSelector = cardSelector;
     this._card = null;
+    this._openPicturePopup = openPicturePopup;
   }
     
   _getTemplate() {
@@ -16,12 +16,6 @@ export class Card {
     this._card.querySelector(".card__like").classList.toggle("card__like_active");
   }
   
-  _openPicturePopup() {
-    pictureLink.src = this._data.link;
-    pictureName.textContent = this._data.name;
-    openPopup(popupImage);
-  }
-
   _removeCard() {
     this._card.closest(".card").remove();
     this._removeEventListeners();
@@ -55,7 +49,7 @@ export class Card {
     })
   }
   
-  createCard() {
+  render() {
     this._card = this._getTemplate();
     this._card.querySelector(".card__image").src = this._data.link;
     this._card.querySelector(".card__image").alt = `Изображение ${this._data.name}`;

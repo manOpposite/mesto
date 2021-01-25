@@ -18,7 +18,7 @@
 }
   
 .popup__input::placeholder {
-  color: rgba(00, 00, 00, 0.1);
+  color: rgba(00, 00, 00, 0.4);
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
