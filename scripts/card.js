@@ -13,7 +13,7 @@ export class Card {
   }
 
   _getLike() {
-    this._card.querySelector(".card__like").classList.toggle("card__like_active");
+    this._cardLikeButton.classList.toggle("card__like_active");
   }
   
   _removeCard() {
@@ -22,38 +22,42 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._card.querySelector(".card__like").addEventListener("click", () => {
+    this._cardLikeButton.addEventListener("click", () => {
       this._getLike()
     });
 
-    this._card.querySelector(".card__image").addEventListener("click", () => {
+    this._cardImage.addEventListener("click", () => {
       this._openPicturePopup()
     });
   
-    this._card.querySelector(".card__remove-button").addEventListener("click", () => {
+    this._cardRemoveButton.addEventListener("click", () => {
       this._removeCard()
     })
   }
 
   _removeEventListeners() {
-    this._card.querySelector(".card__like").removeEventListener("click", () => {
+    this._cardLikeButton.removeEventListener("click", () => {
       this._getLike()
     });
   
-    this._card.querySelector(".card__image").removeEventListener("click", () => {
+    this._cardImage.removeEventListener("click", () => {
       this._openPicturePopup()
     });
     
-    this._card.querySelector(".card__remove-button").removeEventListener("click", () => {
+    this._cardRemoveButton.removeEventListener("click", () => {
       this._removeCard()
     })
   }
   
   render() {
     this._card = this._getTemplate();
-    this._card.querySelector(".card__image").src = this._data.link;
-    this._card.querySelector(".card__image").alt = `Изображение ${this._data.name}`;
-    this._card.querySelector(".card__name").textContent = this._data.name;
+    this._cardLikeButton = this._card.querySelector(".card__like");
+    this._cardImage = this._card.querySelector(".card__image");
+    this._cardRemoveButton = this._card.querySelector(".card__remove-button");
+    this._cardName = this._card.querySelector(".card__name");
+    this._cardImage.src = this._data.link;
+    this._cardImage.alt = `Изображение ${this._data.name}`;
+    this._cardName.textContent = this._data.name;
     this._setEventListeners();
     return this._card;
   }

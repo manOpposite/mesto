@@ -39,7 +39,6 @@ function closePopup(modal) {
   modal.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
   document.removeEventListener("click", closePopupOverlay);
-  setDefaultDataImage();
 }
 
 function openPopup(modal) {
@@ -98,7 +97,6 @@ function setDefaultDataImage() {
 function formSubmitHandlerImage(evt) {
   evt.preventDefault();
   addCard();
-  setDefaultDataImage();
   validationFormAdd.setButtonDisabled();
   closePopup(addCardPopup);
 }
@@ -127,6 +125,8 @@ iconCloseImage.addEventListener("click", () => closePopup(addCardPopup));
 
 buttonAddImage.addEventListener("click", () => {
   validationFormAdd.hideErrorDefault();
+  validationFormAdd.setButtonDisabled();
+  setDefaultDataImage();
   openPopup(addCardPopup);
 })
 
