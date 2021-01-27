@@ -1,6 +1,6 @@
 import {initialCards} from "./initial-cards.js";
 import {Card} from "./card.js";
-import {Validate} from "./validate.js";
+import {FormValidator} from "./validate.js";
 
 const main = document.querySelector(".main");
 const profileButton = main.querySelector(".profile__edit-button");
@@ -32,8 +32,8 @@ const validationConfig = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
 };
-const validationFormAdd = new Validate(validationConfig, popupFormAdd);
-const validationProfile = new Validate(validationConfig, popupFormProfile);
+const validationFormAdd = new FormValidator(validationConfig, popupFormAdd);
+const validationProfile = new FormValidator(validationConfig, popupFormProfile);
 
 function closePopup(modal) {
   modal.classList.remove("popup_opened");
