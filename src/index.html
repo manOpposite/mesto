@@ -3,17 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pages/index.css">
     <title>Место</title>
   </head>
   <body class="body">
     <div class="page">
       <header class="header">
-        <img class="logo" src="images/logo.svg" alt="Логотип 'Место'">
+        <img class="logo" src="<%=require('./images/logo.svg')%>" alt="Логотип 'Место'">
       </header>
       <main class="main">
         <section class="profile">
-          <img class="profile__avatar" src="images/coustoe.jpeg" alt="Жак-Ив Кусто">
+          <img class="profile__avatar" src="<%=require('./images/coustoe.jpg')%>" alt="Жак-Ив Кусто">
           <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" type="button"></button>
@@ -55,11 +54,11 @@
               <h2 class="popup__heading">Новое место</h2>
               <fieldset class="popup__input-container">
                 <label class="popup__label">
-                  <input id="name-image" required type="text" class="popup__input popup__input_image" autocomplete="off" name="name-image" value="" placeholder="Название" minlength="2" maxlength="30">
+                  <input id="name-image" required type="text" class="popup__input popup__input_image" autocomplete="off" name="name" value="" placeholder="Название" minlength="2" maxlength="30">
                   <span id="name-image-error"></span>
                 </label>
                 <label class="popup__label">
-                  <input id="link-image" required type="url" class="popup__input popup__input_link" autocomplete="off" name="link-image" value="" placeholder="Ссылка на картинку">
+                  <input id="link-image" required type="url" class="popup__input popup__input_link" autocomplete="off" name="link" value="" placeholder="Ссылка на картинку">
                   <span id="link-image-error"></span>
                 </label>
               </fieldset>
@@ -86,6 +85,5 @@
         </div> 
       </template>
     </div>
-    <script type="module" src="scripts/index.js"></script>
   </body>
 </html>

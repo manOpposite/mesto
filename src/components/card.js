@@ -1,54 +1,56 @@
-
 export class Card {
-  constructor(data, cardSelector, openPicturePopup) {
+  constructor(data, handleCardClick, cardSelector) {
     this._data = data;
     this._cardSelector = cardSelector;
     this._card = null;
-    this._openPicturePopup = openPicturePopup;
+    this._handleCardClick = handleCardClick;
   }
-    
+
   _getTemplate() {
-    const cardElement = document.querySelector(this._cardSelector).content.querySelector('.card').cloneNode(true);
+    const cardElement = document
+      .querySelector(this._cardSelector)
+      .content.querySelector(".card")
+      .cloneNode(true);
     return cardElement;
   }
 
   _getLike() {
     this._cardLikeButton.classList.toggle("card__like_active");
   }
-  
+
   _removeCard() {
     this._card.closest(".card").remove();
-    this._removeEventListeners();
+    this._card = null;
   }
 
   _setEventListeners() {
     this._cardLikeButton.addEventListener("click", () => {
-      this._getLike()
+      this._getLike();
     });
 
     this._cardImage.addEventListener("click", () => {
-      this._openPicturePopup()
+      this._handleCardClick(this._data);
     });
-  
+
     this._cardRemoveButton.addEventListener("click", () => {
-      this._removeCard()
-    })
+      this._removeCard();
+    });
   }
 
   _removeEventListeners() {
     this._cardLikeButton.removeEventListener("click", () => {
-      this._getLike()
+      this._getLike();
     });
-  
+
     this._cardImage.removeEventListener("click", () => {
-      this._openPicturePopup()
+      this._handleCardClick();
     });
-    
+
     this._cardRemoveButton.removeEventListener("click", () => {
-      this._removeCard()
-    })
+      this._removeCard();
+    });
   }
-  
+
   render() {
     this._card = this._getTemplate();
     this._cardLikeButton = this._card.querySelector(".card__like");
