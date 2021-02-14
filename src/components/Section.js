@@ -13,6 +13,11 @@ export class Section {
     this._container.append(element);
   }
 
+  prependItem(element) {
+    this._container.prepend(element);
+  }
+
+
   renderItems() {
     this.clear();
     this._items.forEach(item => {

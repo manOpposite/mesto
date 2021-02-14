@@ -1,8 +1,8 @@
 import './index.css';
 
 import { initialCards } from "../components/initial-cards.js";
-import { Card } from "../components/card.js";
-import { FormValidator } from "../components/validate.js";
+import { Card } from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
 import { Section } from "../components/Section.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
@@ -34,22 +34,27 @@ const profileJob = main.querySelector(".profile__text");
 const saveProfile = popupProfile.querySelector(".popup__form");
 const jobInput = formElement.querySelector(".popup__input_job");
 const nameInput = formElement.querySelector(".popup__input_name");
+
 const userInfo = new UserInfo(".profile__name", ".profile__text");
 
-const addNewCardPopup = new PopupWithForm(addPopupSelector, (data) =>
-  createCard(data)
-);
+const addNewCardPopup = new PopupWithForm(addPopupSelector, (data) => {
+  const cardElement = createCard(data);
+  cardList.prependItem(cardElement);
+});
 
 const createCard = (data) => {
   const card = new Card(data, openImageCard, ".image-template");
   const cardElement = card.render();
-  cardList.addItem(cardElement);
+  return cardElement;
 };
 
 const cardList = new Section(
   {
     items: initialCards,
-    renderer: (data) => createCard(data),
+    renderer: (data) => {
+      const cardElement = createCard(data);
+      cardList.addItem(cardElement);
+    },
   },
   cardListSelector
 );

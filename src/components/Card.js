@@ -37,20 +37,6 @@ export class Card {
     });
   }
 
-  _removeEventListeners() {
-    this._cardLikeButton.removeEventListener("click", () => {
-      this._getLike();
-    });
-
-    this._cardImage.removeEventListener("click", () => {
-      this._handleCardClick();
-    });
-
-    this._cardRemoveButton.removeEventListener("click", () => {
-      this._removeCard();
-    });
-  }
-
   render() {
     this._card = this._getTemplate();
     this._cardLikeButton = this._card.querySelector(".card__like");
