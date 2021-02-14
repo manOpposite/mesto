@@ -55,12 +55,15 @@ const cardList = new Section(
 );
 
 const editProfilePopup = new PopupWithForm(profilePopupSelector, () => {
-  userInfo.setUserInfo(profileName.textContent, profileJob.textContent);
+  userInfo.setUserInfo(nameInput.value, jobInput.value);
+  userInfo.updateUserInfo();
 });
 
 function openImageCard(data) {
   picturePopup.open(data);
 }
+
+userInfo.setUserInfo(profileName.textContent, profileJob.textContent);
 
 cardList.renderItems();
 
@@ -68,6 +71,7 @@ saveProfile.addEventListener("submit", (evt) => {
   evt.preventDefault();
   userInfo.setUserInfo(nameInput.value, jobInput.value);
   userInfo.updateUserInfo();
+
 });
 
 addNewCardPopup.setEventListeners();
@@ -76,7 +80,10 @@ picturePopup.setEventListeners();
 
 editProfilePopup.setEventListeners();
 
-profileButton.addEventListener("click", () => {
+profileButton.addEventListener("click", () => { 
+  const userData = userInfo.getUserInfo()
+  nameInput.value = userData.name
+  jobInput.value = userData.job
   validationProfile.setButtonActive();
   validationProfile.hideErrorDefault();
   editProfilePopup.open();
