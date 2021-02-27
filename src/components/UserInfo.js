@@ -1,27 +1,45 @@
 export class UserInfo {
-  constructor(userNameSelector, userJobSelector) {
+  constructor(userNameSelector, userDescriptionSelector, userImageSelector) {
     this._userNameSelector = userNameSelector;
-    this._userJobSelector = userJobSelector;
+    this._userDescriptionSelector = userDescriptionSelector;
+    this._userImageSelector = userImageSelector;
     this._userName = document.querySelector(this._userNameSelector);
-    this._userJob = document.querySelector(this._userJobSelector);
-    this._job = "";
-    this._name ="";
+    this._userDescription = document.querySelector(
+      this._userDescriptionSelector
+    );
+    this._userImage = document.querySelector(this._userImageSelector);
+    this._about = "";
+    this._name = "";
+    this._avatar = "";
+    this._id = "";
   }
 
-  getUserInfo = () => {
+  getUserInfo() {
     return {
       name: this._name,
-      job: this._job
-    }
+      about: this._about,
+    };
   }
 
-  setUserInfo(newName, newJob) {
-    this._name = newName;
-    this._job = newJob;
+  setUserInfo(data) {
+    this._about = data.about;
+    this._name = data.name;
+    this._avatar = data.avatar;
+    this._id = data._id;
   }
 
-  updateUserInfo = () => {
+  updateUserInfo() {
     this._userName.textContent = this._name;
-    this._userJob.textContent = this._job;
+    this._userDescription.textContent = this._about;
+    this._userImage.src = this._avatar;
+  }
+
+  getMyId() {
+    return this._id;
+  }
+
+  editAvatar(data) {
+    this._avatar = data.avatar;
+    this._userImage.src = this._avatar;
   }
 }

@@ -6,6 +6,16 @@ export class PopupWithForm extends Popup {
     this._formSubmitHandler = formSubmitHandler;
     this._form = this._popup.querySelector(".popup__form");
     this._inputList = this._form.querySelectorAll(".popup__input");
+    this._popupButton = this._form.querySelector(".popup__button");
+    this._initialValuePopupButton = this._popupButton.textContent;
+  }
+
+  renderLoading(isLoading, initialDownloadMessage = "Cохранение...") {
+    if (isLoading) {
+      this._popupButton.textContent = initialDownloadMessage;
+    } else {
+      this._popupButton.textContent = this._initialValuePopupButton;
+    }
   }
 
   _getInputValues() {

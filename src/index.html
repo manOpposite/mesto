@@ -12,11 +12,14 @@
       </header>
       <main class="main">
         <section class="profile">
-          <img class="profile__avatar" src="<%=require('./images/coustoe.jpg')%>" alt="Жак-Ив Кусто">
+          <div class="profile__container">
+            <img class="profile__avatar" src="#" alt="Жак-Ив Кусто">
+            <button class="profile__avatar-edit-button" type="button"></button>
+          </div>
           <div class="profile__info">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <h1 class="profile__name"></h1>
             <button class="profile__edit-button" type="button"></button>
-            <p class="profile__text">Исследователь океана</p>
+            <p class="profile__text"></p>
           </div>
           <button class="profile__add-button" type="button"></button>
         </section>
@@ -35,11 +38,11 @@
               <h2 class="popup__heading">Редактировать профиль</h2>
               <fieldset class="popup__input-container">
                 <label class="popup__label">
-                  <input id="user-name" required type="text" class="popup__input popup__input_name" autocomplete="off" name="user-name" value="" placeholder="Имя" minlength=2 maxlength=40>
+                  <input id="user-name" required type="text" class="popup__input popup__input_name" autocomplete="off" name="name" value="" placeholder="Имя" minlength=2 maxlength=40>
                   <span id="user-name-error"></span>
                 </label>
                 <label class="popup__label">
-                  <input id="user-job" required type="text" class="popup__input popup__input_job" autocomplete="off" name="user-job" value="" placeholder="Профессия" minlength=2 maxlength=200>
+                  <input id="user-job" required type="text" class="popup__input popup__input_job" autocomplete="off" name="about" value="" placeholder="Профессия" minlength=2 maxlength=200>
                   <span id="user-job-error"></span>
                 </label>
               </fieldset>
@@ -73,6 +76,30 @@
             <p class="popup__picture-name"></p>
           </div>
         </div>
+        <div class="popup popup_delete-card">
+          <div class="popup__container">
+            <button class="popup__close-icon" type="button"></button>
+            <form class="popup__form popup__form_delete" name="delete-card" novalidate>
+              <h2 class="popup__heading">Вы уверены?</h2>
+              <button class="popup__button popup__delete-button" type="button">Да</button>
+            </form>
+          </div>
+        </div>
+        <div class="popup popup_update-avatar">
+          <div class="popup__container">
+            <button class="popup__close-icon" type="button"></button>
+            <form class="popup__form popup__form_update-avatar" name="update-avatar" novalidate>
+              <h2 class="popup__heading">Обновить аватар</h2>
+              <fieldset class="popup__input-container">
+                <label class="popup__label">
+                  <input id="avatar" required type="url" class="popup__input popup__input_avatar" autocomplete="off" name="avatar" value="" placeholder="Ссылка на картинку" >
+                  <span id="avatar-error"></span>
+                </label>
+              </fieldset>
+              <button class="popup__button" type="submit">Сохранить</button>
+            </form>
+          </div>
+        </div>
       </section>
       <template class="image-template">
         <div class="card">
@@ -80,7 +107,10 @@
           <img class="card__image" src="#" alt="Изображение не загрузилось">
           <div class="card__info">
             <h2 class="card__name"></h2>
-            <button class="card__like" type="button"></button>
+            <div class="card__info-likes">
+              <button class="card__like" type="button"></button>
+              <div class="card__counter"></div>
+            </div>
           </div>
         </div> 
       </template>
