@@ -77,19 +77,17 @@ const createCard = ({ name, link, owner, likes, _id }) => {
     },
     () =>
       api
-        .addLike(_id)
-        .then(() => {
-          card.setLikeCounter(_id);
-          card.plusCounter();
+        .addLike({_id})
+        .then((res) => {
+          card.setLikeCounter(res.likes.length);
         })
         .catch((err) => console.log(err)),
 
     () =>
       api
-        .removeLike(_id)
-        .then(() => {
-          card.setLikeCounter(_id);
-          card.minusCounter();
+        .removeLike({_id})
+        .then((res) => {
+          card.setLikeCounter(res.likes.length);
         })
         .catch((err) => console.log(err)),
 

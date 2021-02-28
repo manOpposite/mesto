@@ -68,14 +68,14 @@ export class Api {
   }
 
   addLike(data) {
-    return fetch(`${this._url}/${this._groupId}/cards/likes/${data}`, {
+    return fetch(`${this._url}/${this._groupId}/cards/likes/${data._id}`, {
       method: "PUT",
       headers: this._headers,
     }).then(this._handleResponse);
   }
 
   removeLike(data) {
-    return fetch(`${this._url}/${this._groupId}/cards/likes/${data}`, {
+    return fetch(`${this._url}/${this._groupId}/cards/likes/${data._id}`, {
       method: "DELETE",
       headers: this._headers,
     }).then(this._handleResponse);

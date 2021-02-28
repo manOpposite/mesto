@@ -17,8 +17,4 @@ export class PopupDeleteCard extends Popup {
     });
     super.setEventListeners();
   }
-
-  close() {
-    super.close();
-  }
 }

@@ -39,16 +39,6 @@ export class Card {
     }
   }
 
-  plusCounter() {
-    this._cardLikeCounter.textContent = this._likes.length + 1;
-    this._likes.length = this._cardLikeCounter.textContent;
-  }
-
-  minusCounter() {
-    this._cardLikeCounter.textContent = this._cardLikeCounter.textContent - 1;
-    this._likes.length = this._cardLikeCounter.textContent;
-  }
-
   deleteCard() {
     this._card.closest(".card").remove();
     this._card = null;
@@ -84,8 +74,8 @@ export class Card {
     });
   }
 
-  setLikeCounter() {
-    this._cardLikeCounter.textContent = this._likes.length;
+  setLikeCounter(counter) {
+    this._cardLikeCounter.textContent = counter;
   }
 
   render() {
@@ -101,7 +91,7 @@ export class Card {
     this._cardName.textContent = this._name;
     this._setEventListeners();
     this._checkLikeCardId();
-    this.setLikeCounter();
+    this.setLikeCounter(this._likes.length);
     return this._card;
   }
 }
